@@ -1,0 +1,51 @@
+body {
+  background: #000;
+  color: #a5a7a4;
+  text-align: center;
+  font-family: "Avant Garde", "Century Gothic", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.screen {
+  display: table;
+  width: 10%;
+  height: 100vh;
+  user-select: none;
+
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+    animation: flicker 100ms infinite;
+  }
+}
+
+h1 {
+  font-weight: bold;
+  text-transform: uppercase;
+  animation: fader 2s infinite alternate;
+  font-size: 8vw;
+}
+
+@keyframes fader {
+  0% {
+    opacity: 0;
+    color: #f00;
+  }
+  65% {
+    opacity: 1;
+    color: #a5a7a4;
+  }
+}
+
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+    transform: translate(0,0);
+  }
+  50% {
+    opacity: 0.88;
+    transform: translate(-0.2px,0.2px);
+  }
+}
